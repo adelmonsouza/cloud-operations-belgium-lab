@@ -70,7 +70,7 @@ Ne jamais publier :
 
 ## Tableau symptôme / commande / signal / hypothèse / action
 
-| Symptôme | Commande | Signal | Hypothèse | Action |
+| Symptôme | Commande | Signal observé | Hypothèse | Action recommandée |
 |---|---|---|---|---|
 | Application inaccessible | `curl -I https://example.com` | Timeout | Réseau, firewall ou endpoint indisponible | Vérifier DNS, route et port |
 | Connexion refusée | `nc -vz example.com 443` | Connection refused | Hôte joignable mais service absent | Vérifier service applicatif |
@@ -81,6 +81,16 @@ Ne jamais publier :
 ## Scénario fictif
 
 L'utilisateur indique que `<SERVICE_NAME_EXAMPLE>` ne répond pas. DNS retourne `<DNS_RESULT_EXAMPLE>`. Le test `nc` vers `<PORT_EXAMPLE>` retourne `<CONNECTIVITY_RESULT_EXAMPLE>`, tandis que `curl -I` retourne `<HTTP_STATUS_EXAMPLE>`. L'équipe Cloud Operations documente ces signaux pour distinguer un problème de port, firewall ou application.
+
+## Exemples fictifs
+
+| Exemple | DNS | Port | Signal applicatif | Interprétation |
+|---|---|---|---|---|
+| DNS OK, port 443 accessible | `<DNS_RESULT_EXAMPLE>` | 443 accessible | `<HTTP_STATUS_EXAMPLE>` | Réseau et port semblent OK ; vérifier application ou TLS si erreur HTTP. |
+| DNS OK, port fermé | `<DNS_RESULT_EXAMPLE>` | Connection refused | Pas de réponse applicative | Service absent, arrêté ou mauvais endpoint. |
+| DNS OK, timeout | `<DNS_RESULT_EXAMPLE>` | Timeout | Pas de réponse | Filtrage firewall, routage ou endpoint indisponible. |
+| Port local en écoute | N/A | `<PORT_EXAMPLE>` en LISTEN | Processus présent | Service local démarré ; vérifier accès externe si nécessaire. |
+| Service arrêté | N/A | Port absent | Aucun listener | Démarrer ou corriger le service avant diagnostic réseau. |
 
 ## Erreurs fréquentes de diagnostic
 

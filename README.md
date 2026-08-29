@@ -92,7 +92,8 @@ Le module réseau est en cours avec les premiers labs TCP/IP publiés.
 | 03 | Matrice diagnostic réseau | [Journal](30-jours-cloud-operations-belgique/journal/jour-03-matrice-diagnostic-reseau.md) | [Lab](01-reseaux-tcp-ip/labs/lab-02-matrice-diagnostic-reseau.md) | [Evidence](01-reseaux-tcp-ip/evidence/evidence-02-matrice-diagnostic-reseau.md) | [Notes](01-reseaux-tcp-ip/notes/matrice-diagnostic-reseau.md) | Publié |
 | 04 | DNS diagnostic | [Journal](30-jours-cloud-operations-belgique/journal/jour-04-dns-resolution-noms.md) | [Lab](01-reseaux-tcp-ip/labs/lab-03-diagnostic-dns.md) | [Evidence](01-reseaux-tcp-ip/evidence/evidence-03-diagnostic-dns.md) | [Notes](01-reseaux-tcp-ip/notes/dns-resolution-noms.md) | Publié |
 | 05 | DHCP / passerelle / adressage | [Journal](30-jours-cloud-operations-belgique/journal/jour-05-dhcp-passerelle-adressage.md) | [Lab](01-reseaux-tcp-ip/labs/lab-04-dhcp-passerelle-adressage.md) | [Evidence](01-reseaux-tcp-ip/evidence/evidence-04-dhcp-passerelle-adressage.md) | [Notes](01-reseaux-tcp-ip/notes/dhcp-passerelle-adressage.md) | Publié |
-| 06 | Ports / firewall / connectivité | [Journal](30-jours-cloud-operations-belgique/journal/jour-06-ports-firewall-connectivite.md) | [Lab](01-reseaux-tcp-ip/labs/lab-05-ports-firewall-connectivite.md) | [Evidence](01-reseaux-tcp-ip/evidence/evidence-05-ports-firewall-connectivite.md) | [Notes](01-reseaux-tcp-ip/notes/ports-firewall-connectivite.md) | Publié |
+| 06 | Ports / firewall / connectivité | [Journal](30-jours-cloud-operations-belgique/journal/jour-06-ports-firewall-connectivite.md) | [Lab](01-reseaux-tcp-ip/labs/lab-05-ports-firewall-connectivite.md) | [Evidence](01-reseaux-tcp-ip/evidence/evidence-05-ports-firewall-connectivite.md) | [Notes](01-reseaux-tcp-ip/notes/ports-firewall-connectivite.md) | Done |
+| 07 | Revue réseau et mini case study de troubleshooting | A créer | A créer | A créer | A créer | Planned |
 
 ## What This Repository Demonstrates
 

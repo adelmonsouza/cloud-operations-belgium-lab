@@ -38,6 +38,17 @@ Local listener: <PROCESS_NAME_REDACTED>
 Firewall rule: <FIREWALL_RULE_EXAMPLE>
 ```
 
+## Outputs fictifs ou placeholders
+
+```text
+DNS status: <DNS_RESULT_EXAMPLE>
+TCP 443: <CONNECTIVITY_RESULT_EXAMPLE>
+TCP 80: <CONNECTIVITY_RESULT_EXAMPLE>
+HTTP headers: <HTTP_STATUS_EXAMPLE>
+Local listener: <PROCESS_NAME_REDACTED> on <PORT_EXAMPLE>
+Decision: <OPERATIONAL_DECISION_EXAMPLE>
+```
+
 ## Tableau de preuve
 
 | Élément observé | Valeur public-safe | Interprétation |
@@ -47,6 +58,29 @@ Firewall rule: <FIREWALL_RULE_EXAMPLE>
 | Statut HTTP | `<HTTP_STATUS_EXAMPLE>` | Ajoute un signal applicatif. |
 | Listener local | `<PROCESS_NAME_REDACTED>` | Vérifie si un service écoute localement. |
 | Règle firewall | `<FIREWALL_RULE_EXAMPLE>` | Indique une hypothèse allow/deny fictive. |
+
+## Analyse
+
+Le diagnostic compare plusieurs signaux : DNS, port TCP, réponse HTTP et listener local. DNS OK avec timeout sur le port attendu oriente vers firewall/routage, tandis que DNS OK avec connection refused oriente plutôt vers service absent ou mauvais endpoint.
+
+## Décision opérationnelle
+
+Décision fictive : escalader avec une hypothèse précise au lieu d'indiquer seulement que "l'application ne fonctionne pas". Le ticket d'incident doit contenir le port attendu, le test effectué, le signal observé, l'impact et l'action recommandée.
+
+## Ce qui peut être montré publiquement
+
+- La méthode de diagnostic.
+- Les commandes sûres limitées à `example.com` ou `localhost`.
+- Les tableaux avec placeholders.
+- L'analyse opérationnelle sans output réel.
+
+## Ce qui doit rester privé
+
+- Outputs locaux bruts de `lsof` ou `netstat`.
+- Hostnames réels.
+- IPs personnelles ou professionnelles.
+- Règles firewall réelles.
+- Noms de services internes, clients ou employeurs.
 
 ## Données sensibles vérifiées : oui
 

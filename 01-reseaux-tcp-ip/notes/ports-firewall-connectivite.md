@@ -20,6 +20,25 @@ Comprendre comment vérifier qu'un service applicatif écoute sur un port attend
 | Connection refused | La destination répond mais refuse la connexion sur ce port. |
 | Port ouvert | Un service accepte ou répond sur le port. |
 | Port fermé | Aucun service ne répond ou le port est refusé. |
+| Service indisponible | Le service attendu ne répond pas ou ne traite pas correctement les requêtes. |
+
+## Connection refused vs timeout
+
+| Signal | Signification probable | Exemple d'hypothèse |
+|---|---|---|
+| `connection refused` | La destination est joignable, mais aucun service n'accepte la connexion sur ce port. | Service arrêté, mauvais port ou endpoint incorrect. |
+| `timeout` | Le client ne reçoit pas de réponse dans le délai attendu. | Firewall, routage, filtrage réseau ou endpoint indisponible. |
+
+Ces signaux ne sont pas des preuves absolues. Ils doivent être croisés avec DNS, route, logs et supervision.
+
+## DNS, réseau, firewall ou application
+
+| Domaine | Signal typique | Vérification |
+|---|---|---|
+| DNS | Le nom ne résout pas ou retourne un résultat inattendu. | `dig example.com` |
+| Réseau | La destination IP ne répond pas ou la route est absente. | `ping`, `netstat -rn` dans un contexte autorisé |
+| Firewall | Timeout ou accès bloqué sur un port précis. | `nc -vz example.com 443` |
+| Application | Port ouvert mais réponse HTTP incorrecte. | `curl -I https://example.com` |
 
 ## Ports courants à connaître
 
@@ -79,3 +98,24 @@ Documenter port, protocole, résultat, contexte de test et hypothèse permet une
 ## Limites
 
 Ces commandes doivent rester limitées à des destinations autorisées. Elles ne remplacent pas les logs firewall, métriques applicatives, tests depuis plusieurs réseaux ou outils de supervision.
+
+## Questions d'entretien en français
+
+1. Comment distinguer un problème DNS d'un problème de port applicatif ?
+2. Quelle différence faites-vous entre `connection refused` et `timeout` ?
+3. Pourquoi un port ouvert ne prouve-t-il pas que l'application fonctionne ?
+4. Que vérifiez-vous avant d'escalader vers l'équipe firewall ?
+5. Comment documenteriez-vous une evidence public-safe de connectivité ?
+
+## Questions d'entretien en anglais
+
+1. How do you distinguish DNS, network, firewall and application issues?
+2. What is the difference between `connection refused` and `timeout`?
+3. Why does an open port not always mean the application is healthy?
+
+## Phrases utiles pour entretien
+
+- "Je commence par séparer DNS, connectivité IP, port TCP et réponse applicative."
+- "Un timeout oriente vers filtrage ou routage, mais je le confirme avec d'autres signaux."
+- "Une connexion refusée indique souvent que la destination est atteinte, mais que le service n'écoute pas sur le port attendu."
+- "Je documente toujours la commande, le signal observé, l'hypothèse et l'action suivante."

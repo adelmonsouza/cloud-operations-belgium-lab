@@ -57,7 +57,8 @@ Avant toute publication, vérifier `SECURITY-CHECKLIST.md`. Ne jamais publier de
 | 03 | Matrice diagnostic réseau | [jour-03-matrice-diagnostic-reseau.md](journal/jour-03-matrice-diagnostic-reseau.md) | Publié |
 | 04 | DNS, résolution de noms | [jour-04-dns-resolution-noms.md](journal/jour-04-dns-resolution-noms.md) | Publié |
 | 05 | DHCP, passerelle, adressage | [jour-05-dhcp-passerelle-adressage.md](journal/jour-05-dhcp-passerelle-adressage.md) | Publié |
-| 06 | Ports, firewall, connectivité | [jour-06-ports-firewall-connectivite.md](journal/jour-06-ports-firewall-connectivite.md) | Publié |
+| 06 | Ports, firewall, connectivité | [jour-06-ports-firewall-connectivite.md](journal/jour-06-ports-firewall-connectivite.md) | Done |
+| 07 | Revue réseau et mini case study de troubleshooting | A créer | Planned |
 
 ## Prochaine étape
 

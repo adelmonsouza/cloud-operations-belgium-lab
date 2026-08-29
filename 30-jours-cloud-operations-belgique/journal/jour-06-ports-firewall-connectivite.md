@@ -4,6 +4,18 @@
 
 Comprendre comment diagnostiquer si un service applicatif est joignable, comment interpréter les ports ouverts ou fermés, et comment relier ces signaux à un problème réseau, firewall ou applicatif.
 
+## Ce que j'ai étudié
+
+- Les ports TCP et UDP courants.
+- La différence entre port ouvert, port fermé, `timeout` et `connection refused`.
+- Le rôle d'un firewall local ou réseau.
+- La vérification applicative avec `curl -I`.
+- L'observation des services locaux en écoute avec `lsof` et `netstat`.
+
+## Ce que j'ai compris
+
+Un diagnostic applicatif ne doit pas s'arrêter à "le site ne marche pas". Il faut vérifier séparément la résolution DNS, la connectivité réseau, le port attendu, la présence d'un service en écoute et la réponse applicative.
+
 ## Pourquoi les ports et firewalls sont importants en Cloud Operations
 
 Un service peut avoir une adresse IP correcte et une résolution DNS valide, mais rester inaccessible si le port attendu n'est pas ouvert, si une règle firewall bloque le trafic, ou si l'application n'écoute pas. En Cloud Operations, les ports et firewalls sont essentiels pour diagnostiquer les incidents web, SSH, RDP, DNS, API et supervision.
@@ -45,6 +57,14 @@ netstat -an | grep LISTEN
 
 Important : ne pas scanner des IPs ou domaines inconnus. Utiliser uniquement `example.com`, `localhost` ou des placeholders. Tout output local doit être anonymisé avant publication.
 
+## Risques public-safe
+
+- Ne pas utiliser `nmap`.
+- Ne pas scanner des domaines, IPs ou plages réseau inconnus.
+- Ne pas publier de listeners locaux bruts.
+- Ne pas publier de hostname réel, IP publique personnelle, processus sensible ou règle firewall réelle.
+- Utiliser uniquement `example.com`, `localhost` ou des placeholders.
+
 ## Tableau symptôme / commande / signal / hypothèse / action
 
 | Symptôme | Commande | Signal | Hypothèse | Action suivante |
@@ -70,6 +90,14 @@ Une application web de `<FAKE_COMPANY_EXAMPLE>` n'est pas accessible depuis un p
 ## Lien avec incident management
 
 Les tests de ports aident à documenter la portée d'un incident : service indisponible, port bloqué, application arrêtée ou filtrage réseau. Ils fournissent des signaux utiles pour router l'escalade vers réseau, sécurité, système, cloud platform ou application.
+
+## Difficultés
+
+La difficulté principale est d'interpréter correctement le signal : un port ouvert ne prouve pas que l'application fonctionne, et un timeout ne prouve pas toujours qu'un firewall bloque. Il faut croiser plusieurs vérifications.
+
+## Résultat du jour
+
+Le lab, la note et l'evidence du Jour 06 sont structurés pour expliquer un diagnostic défensif de connectivité applicative, sans scan de systèmes tiers et sans output réel.
 
 ## Question d'entretien en français
 
