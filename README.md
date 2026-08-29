@@ -20,6 +20,8 @@ L'objectif est de démontrer des compétences pratiques, documentées et vérifi
 
 Le projet sert à centraliser l'apprentissage, produire des preuves techniques et préparer des échanges professionnels : formation, stage, entretiens, CV, LinkedIn et défense devant jury. Chaque module doit transformer une connaissance théorique en capacité opérationnelle démontrable.
 
+Ce dépôt est une structure initiale : les labs seront ajoutés progressivement, tous les scénarios resteront fictifs et pédagogiques, et l'objectif est de construire des preuves concrètes vers un profil Cloud Operations en Belgique.
+
 ## Alignement avec la formation belge
 
 Le dépôt est aligné avec une formation francophone belge d'Administrateur Systèmes et Cloud couvrant TCP/IP, Windows Server, PowerShell, Azure AZ-104, Microsoft 365, Linux, Bash, Docker, AWS Cloud Practitioner, Terraform, VMware vSphere, observabilité, sécurisation et laboratoire final.
@@ -46,6 +48,7 @@ Voir [PROGRAMME.md](PROGRAMME.md) pour la correspondance détaillée entre progr
 - `00-orientation/` : positionnement professionnel, vocabulaire et trajectoire.
 - `01-...` à `14-...` : modules techniques alignés avec la formation.
 - `15-laboratoire-final-jury/` : projet final transversal pour une PME belge fictive.
+- `30-jours-cloud-operations-belgique/` : défi structuré pour transformer 30 jours d'étude en preuves publiques et portfolio.
 - `templates/` : modèles de labs, runbooks, incidents, RCA, evidence et défense.
 - `portfolio/` : case studies, formulations CV et LinkedIn.
 - `scripts/` : scripts de validation du dépôt.

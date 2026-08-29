@@ -2,6 +2,8 @@
 
 Cette roadmap organise la progression du laboratoire depuis l'orientation professionnelle jusqu'au portfolio et à la défense devant jury.
 
+Le dossier `30-jours-cloud-operations-belgique/` fournit une cadence courte pour relier cette roadmap à une pratique quotidienne : apprentissage, preuve, journal, publication prudente et préparation entretien.
+
 | Phase | Objectif | Livrables | Preuves | Compétences | Statut initial | Valeur professionnelle |
 |---|---|---|---|---|---|---|
 | Phase 0 - Orientation professionnelle | Clarifier le profil cible Cloud Operations | Objectifs, profil cible, vocabulaire | Documents d'orientation | Communication, employabilité | A démarrer | Positionnement cohérent pour recruteurs |

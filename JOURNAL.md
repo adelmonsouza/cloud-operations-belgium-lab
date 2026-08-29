@@ -10,7 +10,7 @@ Ce journal suit la progression semaine par semaine.
 - Lab réalisé : mise en place initiale du laboratoire Git.
 - Blocages : aucun blocage technique identifié au démarrage.
 - Preuves ajoutées : structure du dépôt, README, programme, roadmap, templates et script de validation.
-- Prochaine action : commencer le module `01-reseaux-tcp-ip/` avec des notes de base et un premier lab de diagnostic réseau.
+- Prochaine action : commencer le défi `30-jours-cloud-operations-belgique/` avec le jour 1, puis le module `01-reseaux-tcp-ip/` avec des notes de base et un premier lab de diagnostic réseau.
 - Réflexion professionnelle : ce dépôt doit montrer une évolution structurée de support infrastructure vers Cloud Operations, avec documentation, rigueur et preuves concrètes.
 
 ## Template d'entrée hebdomadaire

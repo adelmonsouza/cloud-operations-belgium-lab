@@ -64,6 +64,37 @@ Les entreprises, utilisateurs, incidents, architectures et besoins décrits dans
 - [ ] Logs nettoyés.
 - [ ] Scripts non destructifs.
 
+## Vérification locale avant commit
+
+Ces commandes sont public-safe et ne créent aucune ressource cloud. Elles servent à détecter des fichiers ou motifs évidents avant un commit.
+
+```bash
+# Vérifier les fichiers sensibles qui ne doivent pas être versionnés.
+find . -path ./.git -prune -o \( \
+  -name '.env' -o \
+  -name '.env.*' -o \
+  -name '*.pem' -o \
+  -name '*.key' -o \
+  -name '*.pfx' -o \
+  -name '*.p12' -o \
+  -name 'terraform.tfstate' -o \
+  -name 'terraform.tfstate.*' -o \
+  -name '*.tfvars' \
+\) -print
+
+# Rechercher des formats évidents de tokens ou clés privées réelles.
+grep -RInE --exclude-dir=.git --exclude='*.gitkeep' \
+  '(AKIA[0-9A-Z]{16}|ASIA[0-9A-Z]{16}|sk-[A-Za-z0-9_-]{20,}|ghp_[A-Za-z0-9_]{20,}|github_pat_[A-Za-z0-9_]{20,}|xox[baprs]-[A-Za-z0-9-]{20,}|-----BEGIN [A-Z ]*PRIVATE KEY-----)' .
+
+# Vérifier la structure du dépôt avant commit.
+bash scripts/validate-structure.sh
+
+# Relire les changements exacts avant commit.
+git diff --staged
+```
+
+Les mots pédagogiques comme `secret`, `token`, `password`, `.env`, `tfstate` ou `tfvars` peuvent apparaître dans cette politique ou dans `.gitignore`. Ce n'est pas un problème tant qu'aucune valeur réelle, clé privée ou fichier sensible n'est présent.
+
 ## Checklist avant rendre public
 
 - [ ] Relecture complète de `SECURITY.md`.
