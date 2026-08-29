@@ -22,6 +22,8 @@ Le dépôt public doit rester dans :
 
 Ne pas créer de symlink depuis le dépôt public vers les zones privées.
 
+Les tests réels se font dans `~/Developer/cloud-ops-sandbox`. Les réponses privées, brouillons d'exercices et raisonnements non nettoyés se font dans `~/Developer/cloud-ops-private-notes/exercises`. Le dépôt public ne reçoit que la version finale sanitizée.
+
 ## Workflow recommandé
 
 ```text
@@ -44,6 +46,8 @@ Ouvrir le projet :
 cd ~/Developer/cloud-operations-belgium-lab
 code .
 ```
+
+Cursor/VS Code peut être utilisé comme éditeur. Quand Codex modifie des fichiers publics, le lancer depuis `~/Developer/cloud-operations-belgium-lab` pour éviter de mélanger dépôt public, notes privées et sandbox.
 
 Vérifier l'état Git :
 
