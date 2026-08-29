@@ -40,6 +40,8 @@ Ces signaux ne sont pas des preuves absolues. Ils doivent être croisés avec DN
 | Firewall | Timeout ou accès bloqué sur un port précis. | `nc -vz example.com 443` |
 | Application | Port ouvert mais réponse HTTP incorrecte. | `curl -I https://example.com` |
 
+Une bonne méthode consiste à isoler les couches : nom, route, port, service puis réponse applicative. Cela évite de conclure trop vite à une panne applicative alors que le blocage peut venir du réseau ou d'une règle firewall.
+
 ## Ports courants à connaître
 
 | Port | Service | Remarque |

@@ -10,7 +10,7 @@ Documenter une méthode public-safe pour vérifier si un service applicatif est 
 
 ## Contexte fictif
 
-Une application web de `<FAKE_COMPANY_EXAMPLE>` n'est pas accessible depuis un poste utilisateur. L'équipe Cloud Operations doit vérifier si le nom DNS répond, si le port web est joignable, et si un service local ou distant semble écouter sur le port attendu.
+Une application web de `<FAKE_COMPANY_EXAMPLE>` n'est pas accessible depuis un poste utilisateur. Le DNS semble répondre, mais la connexion applicative échoue. L'équipe Cloud Operations doit vérifier si le port web est joignable et si un service local ou distant semble écouter sur le port attendu.
 
 ## Pré-requis
 
@@ -43,6 +43,8 @@ netstat -an | grep LISTEN
 ## Important
 
 Ces commandes ne doivent pas être utilisées pour scanner des IPs, plages réseau ou domaines inconnus. Le lab est défensif et pédagogique : il sert à comprendre les signaux de connectivité, pas à découvrir des services sur des systèmes tiers.
+
+Les sorties brutes de `lsof` et `netstat` doivent rester hors du dépôt public. Elles peuvent contenir un nom utilisateur local, des processus, des ports internes, des hostnames ou des informations système.
 
 ## Comment anonymiser les sorties
 

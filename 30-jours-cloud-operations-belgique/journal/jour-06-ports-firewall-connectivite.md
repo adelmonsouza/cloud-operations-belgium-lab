@@ -12,6 +12,20 @@ Comprendre comment diagnostiquer si un service applicatif est joignable, comment
 - La vérification applicative avec `curl -I`.
 - L'observation des services locaux en écoute avec `lsof` et `netstat`.
 
+## Ce que j'ai testé localement
+
+La session locale a été réalisée dans un sandbox hors dépôt public. Les commandes étudiées sont :
+
+```bash
+curl -I https://example.com
+nc -vz example.com 443
+nc -vz example.com 80
+lsof -iTCP -sTCP:LISTEN -n -P
+netstat -an | grep LISTEN
+```
+
+Résultat pédagogique retenu : DNS, TCP 443, TCP 80 et HTTP(S) fonctionnent vers `example.com`. Les commandes `lsof` et `netstat` servent à identifier les services ou sockets locaux en écoute, mais leurs sorties brutes restent privées.
+
 ## Ce que j'ai compris
 
 Un diagnostic applicatif ne doit pas s'arrêter à "le site ne marche pas". Il faut vérifier séparément la résolution DNS, la connectivité réseau, le port attendu, la présence d'un service en écoute et la réponse applicative.
@@ -95,9 +109,17 @@ Les tests de ports aident à documenter la portée d'un incident : service indis
 
 La difficulté principale est d'interpréter correctement le signal : un port ouvert ne prouve pas que l'application fonctionne, et un timeout ne prouve pas toujours qu'un firewall bloque. Il faut croiser plusieurs vérifications.
 
+## Ce qui reste privé
+
+- Outputs bruts de `lsof` et `netstat`.
+- Nom utilisateur local, hostname réel, processus locaux et ports internes.
+- Chemins locaux personnels.
+- Tout screenshot non anonymisé.
+- Toute information d'employeur, client ou environnement professionnel réel.
+
 ## Résultat du jour
 
-Le lab, la note et l'evidence du Jour 06 sont structurés pour expliquer un diagnostic défensif de connectivité applicative, sans scan de systèmes tiers et sans output réel.
+Le lab, la note et l'evidence du Jour 06 sont structurés pour expliquer un diagnostic défensif de connectivité applicative, sans scan de systèmes tiers et sans output réel. La version publique utilise uniquement `example.com`, `localhost`, des placeholders et des exemples simulés.
 
 ## Question d'entretien en français
 

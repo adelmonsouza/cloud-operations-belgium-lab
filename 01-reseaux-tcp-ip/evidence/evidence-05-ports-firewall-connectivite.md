@@ -16,12 +16,16 @@ Evidence public-safe sur le diagnostic de connectivité applicative.
 
 Démontrer une méthode de diagnostic permettant de relier port, firewall, service applicatif et incident Cloud Operations, sans publier de données réelles.
 
-## Commandes documentées
+## Résumé du lab
+
+La session locale a vérifié la connectivité applicative vers `example.com` avec des commandes sûres et limitées. Le résultat pédagogique retenu est que DNS, TCP 443, TCP 80 et HTTP(S) fonctionnent vers `example.com`, tandis que les commandes locales `lsof` et `netstat` servent à identifier des listeners à anonymiser strictement.
+
+## Commandes utilisées
 
 ```bash
+curl -I https://example.com
 nc -vz example.com 443
 nc -vz example.com 80
-curl -I https://example.com
 lsof -iTCP -sTCP:LISTEN -n -P
 netstat -an | grep LISTEN
 ```
@@ -66,6 +70,17 @@ Le diagnostic compare plusieurs signaux : DNS, port TCP, réponse HTTP et listen
 ## Décision opérationnelle
 
 Décision fictive : escalader avec une hypothèse précise au lieu d'indiquer seulement que "l'application ne fonctionne pas". Le ticket d'incident doit contenir le port attendu, le test effectué, le signal observé, l'impact et l'action recommandée.
+
+## Résultat public-safe
+
+```text
+DNS: <DNS_RESULT_EXAMPLE>
+TCP 443: <CONNECTIVITY_RESULT_EXAMPLE>
+TCP 80: <CONNECTIVITY_RESULT_EXAMPLE>
+HTTP(S): <HTTP_STATUS_EXAMPLE>
+Local listeners: <PROCESS_NAME_REDACTED> on <PORT_EXAMPLE>
+Operational decision: <OPERATIONAL_DECISION_EXAMPLE>
+```
 
 ## Ce qui peut être montré publiquement
 
