@@ -1,0 +1,20 @@
+name: Security check
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  security-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate repository structure
+        shell: bash
+        run: bash scripts/validate-structure.sh
+
+      - name: Run public-safe security scan
+        shell: bash
+        run: bash scripts/security-scan.sh

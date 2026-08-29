@@ -2,6 +2,30 @@
 
 Ce dépôt est public-safe, orienté apprentissage, sans données d'employeur, client ou environnement interne.
 
+## Public repository threat model
+
+Ce dépôt étant public, le risque principal n'est pas l'exploitation technique du dépôt lui-même, mais la fuite involontaire d'informations : secrets, identifiants cloud, données personnelles, données employeur/client, screenshots bruts ou outputs d'outils contenant trop de contexte.
+
+## What can go wrong
+
+- Un fichier `.env`, state Terraform ou credential JSON peut être ajouté par erreur.
+- Une capture peut révéler un nom d'utilisateur, tenant ID, subscription ID, IP publique ou chemin local.
+- Un log peut contenir un token, une URL interne ou une donnée client.
+- Un lab cloud peut exposer des IDs réels dans une evidence.
+- Un texte portfolio peut sur-vendre un lab personnel comme expérience production.
+
+## GitHub public repository rules
+
+- Tout contenu doit être fictif, pédagogique ou anonymisé.
+- Les outputs bruts restent hors du dépôt public.
+- Les preuves publiées doivent être relues et sanitizadas.
+- Les commits doivent rester petits et vérifiables.
+- Aucun push ne doit être fait si le scan sécurité échoue.
+
+## Secret scanning and push protection expectation
+
+GitHub secret scanning et push protection doivent être considérés comme une couche supplémentaire, pas comme la seule protection. Le dépôt fournit aussi `scripts/security-scan.sh` pour un contrôle local simple avant commit et push.
+
 ## Données interdites
 
 Ne jamais committer :
@@ -46,6 +70,18 @@ Ne jamais committer :
 - Supprimer ou masquer identifiants, tokens, chemins privés, adresses e-mail, données client et données employeur.
 - Les evidence doivent prouver un apprentissage, pas exposer un environnement réel.
 
+## Evidence sanitization policy
+
+Une evidence publique doit remplacer les données réelles par des placeholders comme `<LOCAL_IP_ANONYMIZED>`, `<PUBLIC_IP_REDACTED>`, `<TENANT_ID_REDACTED>`, `<SUBSCRIPTION_ID_REDACTED>`, `<ACCOUNT_ID_REDACTED>`, `<USERNAME_REDACTED>`, `<HOSTNAME_REDACTED>`, `<RESOURCE_GROUP_EXAMPLE>` ou `<FAKE_COMPANY_EXAMPLE>`.
+
+## Screenshot sanitization policy
+
+Les screenshots bruts ne doivent pas être commités. Toute capture publique doit être relue, recadrée si nécessaire, et masquer noms, e-mails, IDs, IPs, chemins locaux, abonnements cloud, noms de ressources réelles et informations d'employeur/client.
+
+## Cloud output sanitization policy
+
+Les sorties Azure, AWS, Terraform, Docker, GitHub ou outils de supervision doivent être nettoyées avant publication. Les IDs cloud, resource IDs, account IDs, subscriptions, tenants, usernames, hostnames et IPs doivent être remplacés par des placeholders.
+
 ## No employer/client data
 
 Aucune donnée Accenture, client, fournisseur, ticket, outil interne, procédure interne ou information confidentielle ne doit être ajoutée. Les scénarios doivent être fictifs et pédagogiques.
@@ -63,6 +99,16 @@ Les entreprises, utilisateurs, incidents, architectures et besoins décrits dans
 - [ ] Screenshots anonymisés.
 - [ ] Logs nettoyés.
 - [ ] Scripts non destructifs.
+
+## Local pre-push checklist
+
+- [ ] `git status --short --branch` propre.
+- [ ] `bash scripts/validate-structure.sh` réussi.
+- [ ] `bash scripts/security-scan.sh` réussi.
+- [ ] Aucun screenshot brut.
+- [ ] Aucun output cloud réel non nettoyé.
+- [ ] Aucun fichier sensible détecté.
+- [ ] Push normal uniquement, jamais force push.
 
 ## Vérification locale avant commit
 
@@ -111,3 +157,19 @@ Les mots pédagogiques comme `secret`, `token`, `password`, `.env`, `tfstate` ou
 3. Supprimer le secret du dépôt et de l'historique si nécessaire.
 4. Vérifier qu'aucune copie n'est restée dans issues, PR, logs CI ou artefacts.
 5. Documenter l'incident sans révéler le secret.
+
+## Emergency procedure if sensitive data is committed
+
+1. Arrêter toute publication supplémentaire.
+2. Identifier le type de donnée exposée sans la recopier.
+3. Révoquer le secret ou l'identifiant concerné si applicable.
+4. Nettoyer le contenu et l'historique Git avec une méthode appropriée.
+5. Vérifier GitHub Actions, artefacts, issues et PR.
+6. Refaire `bash scripts/security-scan.sh`.
+7. Reprendre les commits uniquement après validation.
+
+## Decision rule: when to move content to private repo
+
+Public : documentation propre, labs fictifs, templates, portfolio et evidences sanitizadas.
+
+Privé : rascunhos, screenshots bruts, outputs réels, debugging temporário, notes non relues et tout matériel incertain.

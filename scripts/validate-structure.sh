@@ -13,6 +13,7 @@ require_path() {
 
 required_files=(
   "README.md"
+  "CODEX.md"
   "PROGRAMME.md"
   "ROADMAP.md"
   "JOURNAL.md"
@@ -20,8 +21,13 @@ required_files=(
   "CONTRIBUTING.md"
   "LICENSE"
   ".gitignore"
+  ".gitattributes"
+  ".github/SECURITY_REVIEW.md"
   ".github/pull_request_template.md"
   ".github/workflows/validate-repository.yml"
+  ".github/workflows/security-check.yml"
+  "scripts/security-scan.sh"
+  "docs/publication-model.md"
 )
 
 required_dirs=(
@@ -29,6 +35,7 @@ required_dirs=(
   "portfolio"
   "15-laboratoire-final-jury"
   "30-jours-cloud-operations-belgique"
+  "docs"
 )
 
 module_dirs=(

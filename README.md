@@ -65,6 +65,10 @@ Ce dépôt est conçu pour être public-safe. Il ne doit jamais contenir :
 
 Tous les scénarios sont fictifs, anonymisés et pédagogiques. Les preuves doivent être nettoyées avant commit.
 
+## Security-first public repository
+
+Ce dépôt est public par design. Tout contenu doit être fictif, anonymisé et public-safe. Les labs réels ne doivent entrer dans le dépôt qu'après sanitization complète ; les outputs bruts, screenshots temporaires, notes privées et evidences non relues doivent rester hors du repo public, idéalement dans un espace privé séparé.
+
 ## Comment lire le dépôt
 
 1. Lire `README.md`, `PROGRAMME.md`, `ROADMAP.md` et `SECURITY.md`.

@@ -4,7 +4,9 @@
 .LSOverride
 
 # Editors
-.vscode/
+.vscode/*
+!.vscode/extensions.json
+.vscode/settings.json
 .idea/
 *.swp
 *.swo
@@ -12,20 +14,25 @@
 # Secrets and credentials
 .env
 .env.*
+*.env
 *.pem
 *.key
 *.pfx
 *.p12
 *.crt
 *.cer
+*.kubeconfig
 secrets.json
 credentials.json
 id_rsa
+id_rsa.pub
 id_ed25519
+id_ed25519.pub
 
 # Cloud CLIs
 .azure/
 .aws/
+.kube/
 azureProfile.json
 accessTokens.json
 
@@ -35,6 +42,7 @@ accessTokens.json
 terraform.tfstate
 terraform.tfstate.*
 *.tfvars
+*.tfvars.json
 crash.log
 override.tf
 override.tf.json
@@ -53,6 +61,7 @@ node_modules/
 dist/
 build/
 coverage/
+.cache/
 
 # PowerShell
 *.ps1xml
@@ -63,6 +72,8 @@ coverage/
 *.tmp
 *.bak
 *.local
+tmp/
+temp/
 
 # Docker
 .docker/
@@ -76,6 +87,22 @@ logs/
 *.jks
 *.keystore
 
-# Evidence staging
+# Screenshots and private evidence
+screenshots-private/
+evidence-private/
+private-notes/
 evidence/private/
 **/evidence/private/
+
+# Archives
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.7z
+
+# Cloud outputs
+*cloud-output*.json
+*azure-output*.json
+*aws-output*.json
+*terraform-plan*.json
