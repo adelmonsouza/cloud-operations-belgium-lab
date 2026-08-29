@@ -1,0 +1,81 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Secrets and credentials
+.env
+.env.*
+*.pem
+*.key
+*.pfx
+*.p12
+*.crt
+*.cer
+secrets.json
+credentials.json
+id_rsa
+id_ed25519
+
+# Cloud CLIs
+.azure/
+.aws/
+azureProfile.json
+accessTokens.json
+
+# Terraform
+.terraform/
+.terraform.lock.hcl
+terraform.tfstate
+terraform.tfstate.*
+*.tfvars
+crash.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Python
+__pycache__/
+**/__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Node
+node_modules/
+dist/
+build/
+coverage/
+
+# PowerShell
+*.ps1xml
+*.pssc
+*.psrc
+
+# Bash and local temp
+*.tmp
+*.bak
+*.local
+
+# Docker
+.docker/
+docker-compose.override.yml
+
+# Logs
+*.log
+logs/
+
+# Certificates and keys
+*.jks
+*.keystore
+
+# Evidence staging
+evidence/private/
+**/evidence/private/

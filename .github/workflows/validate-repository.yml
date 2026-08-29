@@ -1,0 +1,26 @@
+name: Validate repository
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate required structure
+        shell: bash
+        run: |
+          test -f README.md
+          test -f PROGRAMME.md
+          test -f ROADMAP.md
+          test -f JOURNAL.md
+          test -f SECURITY.md
+          test -f CONTRIBUTING.md
+          test -d templates
+          test -d portfolio
+          test -d 15-laboratoire-final-jury
+          bash scripts/validate-structure.sh
