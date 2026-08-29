@@ -4,6 +4,12 @@ Cette roadmap organise la progression du laboratoire depuis l'orientation profes
 
 Le dossier `30-jours-cloud-operations-belgique/` fournit une cadence courte pour relier cette roadmap à une pratique quotidienne : apprentissage, preuve, journal, publication prudente et préparation entretien.
 
+## Suivi actuel
+
+Le module réseau `01-reseaux-tcp-ip/` est en cours. Les jours 02 à 06 sont publiés avec des labs public-safe sur diagnostic local, matrice de troubleshooting, DNS, DHCP/passerelle/adressage, ports/firewall/connectivité.
+
+Prochain jalon : Jour 07 avec revue de semaine réseau, consolidation des preuves et préparation d'une mini case study réseau.
+
 | Phase | Objectif | Livrables | Preuves | Compétences | Statut initial | Valeur professionnelle |
 |---|---|---|---|---|---|---|
 | Phase 0 - Orientation professionnelle | Clarifier le profil cible Cloud Operations | Objectifs, profil cible, vocabulaire | Documents d'orientation | Communication, employabilité | A démarrer | Positionnement cohérent pour recruteurs |

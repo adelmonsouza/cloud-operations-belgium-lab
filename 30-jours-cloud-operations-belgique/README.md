@@ -1,5 +1,7 @@
 # 30 Jours Cloud Operations Belgique
 
+Ce défi transforme l'étude quotidienne en preuves techniques public-safe pour un portfolio Cloud Operations orienté Belgique.
+
 ## Objectif
 
 Ce défi organise 30 jours d'apprentissage structuré pour transformer l'étude Cloud Operations en preuves concrètes, public-safe et utilisables pour GitHub, CV, LinkedIn, entretiens, stage et défense devant jury.
@@ -45,6 +47,21 @@ Chaque jour doit produire au moins une trace utile : une commande expliquée, un
 ## Publier sans risque
 
 Avant toute publication, vérifier `SECURITY-CHECKLIST.md`. Ne jamais publier de données employeur, client, ticket réel, screenshot sensible, token, secret, identifiant cloud réel ou détail d'infrastructure réelle.
+
+## Progression
+
+| Jour | Sujet | Journal | Statut |
+|---|---|---|---|
+| 01 | Orientation Cloud Ops | [jour-01-orientation-cloud-ops.md](journal/jour-01-orientation-cloud-ops.md) | Publié |
+| 02 | TCP/IP diagnostic local | [jour-02-tcp-ip-bases.md](journal/jour-02-tcp-ip-bases.md) | Publié |
+| 03 | Matrice diagnostic réseau | [jour-03-matrice-diagnostic-reseau.md](journal/jour-03-matrice-diagnostic-reseau.md) | Publié |
+| 04 | DNS, résolution de noms | [jour-04-dns-resolution-noms.md](journal/jour-04-dns-resolution-noms.md) | Publié |
+| 05 | DHCP, passerelle, adressage | [jour-05-dhcp-passerelle-adressage.md](journal/jour-05-dhcp-passerelle-adressage.md) | Publié |
+| 06 | Ports, firewall, connectivité | [jour-06-ports-firewall-connectivite.md](journal/jour-06-ports-firewall-connectivite.md) | Publié |
+
+## Prochaine étape
+
+Jour 07 : revue de la première semaine réseau, synthèse des preuves, questions d'entretien et mini case study réseau.
 
 ## Fréquence LinkedIn recommandée
 

@@ -69,6 +69,10 @@ Tous les scénarios sont fictifs, anonymisés et pédagogiques. Les preuves doiv
 
 Ce dépôt est public par design. Tout contenu doit être fictif, anonymisé et public-safe. Les labs réels ne doivent entrer dans le dépôt qu'après sanitization complète ; les outputs bruts, screenshots temporaires, notes privées et evidences non relues doivent rester hors du repo public, idéalement dans un espace privé séparé.
 
+## Local workflow
+
+Le travail local suit le flux `Sandbox -> Private notes -> Sanitized public lab -> Security scan -> Commit -> Push`. Voir [LOCAL_WORKFLOW.md](LOCAL_WORKFLOW.md) pour les chemins recommandés, les commandes quotidiennes, les outils locaux et les règles de publication public-safe.
+
 ## Comment lire le dépôt
 
 1. Lire `README.md`, `PROGRAMME.md`, `ROADMAP.md` et `SECURITY.md`.
@@ -79,7 +83,16 @@ Ce dépôt est public par design. Tout contenu doit être fictif, anonymisé et 
 
 ## Progression actuelle
 
-Statut initial : structure professionnelle du laboratoire mise en place. Les modules contiennent des squelettes prêts à être complétés par notes, labs, preuves et réponses d'entretien.
+Le module réseau est en cours avec les premiers labs TCP/IP publiés.
+
+| Jour | Sujet | Journal | Lab | Evidence | Notes | Statut |
+|---|---|---|---|---|---|---|
+| 01 | Orientation Cloud Ops | [Journal](30-jours-cloud-operations-belgique/journal/jour-01-orientation-cloud-ops.md) | N/A | N/A | [Orientation](00-orientation/README.md) | Publié |
+| 02 | TCP/IP diagnostic local | [Journal](30-jours-cloud-operations-belgique/journal/jour-02-tcp-ip-bases.md) | [Lab](01-reseaux-tcp-ip/labs/lab-01-diagnostic-reseau-local.md) | [Evidence](01-reseaux-tcp-ip/evidence/evidence-01-diagnostic-reseau-local.md) | N/A | Publié |
+| 03 | Matrice diagnostic réseau | [Journal](30-jours-cloud-operations-belgique/journal/jour-03-matrice-diagnostic-reseau.md) | [Lab](01-reseaux-tcp-ip/labs/lab-02-matrice-diagnostic-reseau.md) | [Evidence](01-reseaux-tcp-ip/evidence/evidence-02-matrice-diagnostic-reseau.md) | [Notes](01-reseaux-tcp-ip/notes/matrice-diagnostic-reseau.md) | Publié |
+| 04 | DNS diagnostic | [Journal](30-jours-cloud-operations-belgique/journal/jour-04-dns-resolution-noms.md) | [Lab](01-reseaux-tcp-ip/labs/lab-03-diagnostic-dns.md) | [Evidence](01-reseaux-tcp-ip/evidence/evidence-03-diagnostic-dns.md) | [Notes](01-reseaux-tcp-ip/notes/dns-resolution-noms.md) | Publié |
+| 05 | DHCP / passerelle / adressage | [Journal](30-jours-cloud-operations-belgique/journal/jour-05-dhcp-passerelle-adressage.md) | [Lab](01-reseaux-tcp-ip/labs/lab-04-dhcp-passerelle-adressage.md) | [Evidence](01-reseaux-tcp-ip/evidence/evidence-04-dhcp-passerelle-adressage.md) | [Notes](01-reseaux-tcp-ip/notes/dhcp-passerelle-adressage.md) | Publié |
+| 06 | Ports / firewall / connectivité | [Journal](30-jours-cloud-operations-belgique/journal/jour-06-ports-firewall-connectivite.md) | [Lab](01-reseaux-tcp-ip/labs/lab-05-ports-firewall-connectivite.md) | [Evidence](01-reseaux-tcp-ip/evidence/evidence-05-ports-firewall-connectivite.md) | [Notes](01-reseaux-tcp-ip/notes/ports-firewall-connectivite.md) | Publié |
 
 ## What This Repository Demonstrates
 
