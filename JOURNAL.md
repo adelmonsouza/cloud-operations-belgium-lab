@@ -17,7 +17,7 @@ Ce journal suit la progression semaine par semaine.
 
 | Jour | Sujet | Statut |
 |---|---|---|
-| 07 | Revue réseau et mini case study de troubleshooting | Planned |
+| 07 | Revue réseau et mini case study de troubleshooting | Done |
 | 08 | Docker Nginx local | Done |
 | 09 | Docker port mapping failures and troubleshooting | Planned |
 

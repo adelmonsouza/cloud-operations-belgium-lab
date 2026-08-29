@@ -28,6 +28,7 @@ Le réseau est la base des incidents cloud, systèmes, DNS, VPN, accès applicat
 | [Lab 03](labs/lab-03-diagnostic-dns.md) | Diagnostic DNS | Publié |
 | [Lab 04](labs/lab-04-dhcp-passerelle-adressage.md) | DHCP, passerelle et adressage | Publié |
 | [Lab 05](labs/lab-05-ports-firewall-connectivite.md) | Ports, firewall et connectivité applicative | Publié |
+| [Lab 06](labs/lab-06-revue-reseau-case-study.md) | Revue réseau et mini case study de troubleshooting | Publié |
 
 ## Preuves attendues
 
@@ -40,6 +41,7 @@ Commandes commentées, schémas, résultats anonymisés et mini-rapport de diagn
 - [Evidence 03 - Diagnostic DNS](evidence/evidence-03-diagnostic-dns.md)
 - [Evidence 04 - DHCP, passerelle et adressage](evidence/evidence-04-dhcp-passerelle-adressage.md)
 - [Evidence 05 - Ports, firewall et connectivité applicative](evidence/evidence-05-ports-firewall-connectivite.md)
+- [Evidence 06 - Revue réseau et mini case study](evidence/evidence-06-revue-reseau-case-study.md)
 
 ## Notes disponibles
 
@@ -47,6 +49,7 @@ Commandes commentées, schémas, résultats anonymisés et mini-rapport de diagn
 - [DNS, résolution de noms et diagnostic opérationnel](notes/dns-resolution-noms.md)
 - [DHCP, passerelle et attribution d'adresses](notes/dhcp-passerelle-adressage.md)
 - [Ports, firewall et connectivité applicative](notes/ports-firewall-connectivite.md)
+- [Revue réseau et troubleshooting](notes/revue-reseau-troubleshooting.md)
 
 ## Questions d'entretien possibles
 Voir `interview-questions.md`.
@@ -56,11 +59,11 @@ Voir `../templates/`.
 
 ## Statut initial
 
-En cours. Les jours 02 à 06 du défi sont publiés avec labs, evidences et notes réseau.
+En cours. Les jours 02 à 07 du défi sont publiés avec labs, evidences et notes réseau. Le Jour 07 consolide la première semaine avec une méthode de case study en couches.
 
 ## Prochaine étape
 
-Jour 07 : revue de la première semaine réseau et préparation d'une mini case study réseau public-safe.
+Jour 09 : troubleshooting Docker sur les échecs de mapping de ports, en réutilisant la méthode réseau du Jour 07.
 
 ## English Summary
 This module covers TCP/IP fundamentals for operational network troubleshooting.

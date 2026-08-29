@@ -8,7 +8,7 @@ Le dossier `30-jours-cloud-operations-belgique/` fournit une cadence courte pour
 
 Le module réseau `01-reseaux-tcp-ip/` est en cours. Les jours 02 à 06 sont publiés avec des labs public-safe sur diagnostic local, matrice de troubleshooting, DNS, DHCP/passerelle/adressage, ports/firewall/connectivité.
 
-Jour 08 est également publié dans `08-docker-conteneurs/` avec un lab Nginx local, un mapping de port et une vérification HTTP public-safe. Jour 07 reste planifié; le prochain jalon de défi est Jour 09 sur les échecs de mapping de ports et le troubleshooting Docker.
+Les jours 02 à 07 du module réseau sont publiés, dont le Jour 07 avec une mini case study de troubleshooting en couches. Jour 08 est également publié dans `08-docker-conteneurs/` avec un lab Nginx local, un mapping de port et une vérification HTTP public-safe. Le prochain jalon de défi est Jour 09 sur les échecs de mapping de ports et le troubleshooting Docker.
 
 | Phase | Objectif | Livrables | Preuves | Compétences | Statut initial | Valeur professionnelle |
 |---|---|---|---|---|---|---|

@@ -39,6 +39,6 @@ Cette section suit les contenus effectivement publiés dans le dépôt. Elle com
 
 | Jour | Sujet publié | Journal | Lab | Evidence | Notes | Statut |
 |---|---|---|---|---|---|---|
-| 07 | Revue réseau et mini case study de troubleshooting | A créer | A créer | A créer | A créer | Planned |
+| 07 | Revue réseau et mini case study de troubleshooting | [Journal](journal/jour-07-revue-reseau-case-study.md) | [Lab](../01-reseaux-tcp-ip/labs/lab-06-revue-reseau-case-study.md) | [Evidence](../01-reseaux-tcp-ip/evidence/evidence-06-revue-reseau-case-study.md) | [Notes](../01-reseaux-tcp-ip/notes/revue-reseau-troubleshooting.md) | Done |
 | 08 | Docker Nginx local | [Journal](journal/jour-08-docker-nginx-local.md) | [Lab](../08-docker-conteneurs/labs/lab-01-nginx-local-port-mapping.md) | [Evidence](../08-docker-conteneurs/evidence/evidence-01-nginx-local-port-mapping.md) | [Notes](../08-docker-conteneurs/notes/docker-nginx-local.md) | Done |
 | 09 | Docker port mapping failures and troubleshooting | A créer | A créer | A créer | A créer | Planned |
