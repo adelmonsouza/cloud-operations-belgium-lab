@@ -32,3 +32,13 @@
 | 28 | Terraform et AWS basics | Relier IaC et culture multi-cloud | Note comparative | `10-aws-cloud-practitioner/`, `11-terraform/` | Tableau Azure/AWS/Terraform | Différence entre `plan` et `apply` ? |
 | 29 | Security hardening et runbooks | Formaliser sécurité opérationnelle | Checklist et runbook | `14-securisation-systemes-services/` | Checklist public-safe | Qu'est-ce que le moindre privilège ? |
 | 30 | Final review et portfolio | Relier preuves, final lab et employabilité | Synthèse portfolio | `15-laboratoire-final-jury/`, `portfolio/` | Liste de preuves prioritaires | Quelle progression ce dépôt démontre-t-il ? |
+
+## Suivi de publication du défi
+
+Cette section suit les contenus effectivement publiés dans le dépôt. Elle complète le parcours pédagogique général ci-dessus sans remplacer les thèmes de formation prévus.
+
+| Jour | Sujet publié | Journal | Lab | Evidence | Notes | Statut |
+|---|---|---|---|---|---|---|
+| 07 | Revue réseau et mini case study de troubleshooting | A créer | A créer | A créer | A créer | Planned |
+| 08 | Docker Nginx local | [Journal](journal/jour-08-docker-nginx-local.md) | [Lab](../08-docker-conteneurs/labs/lab-01-nginx-local-port-mapping.md) | [Evidence](../08-docker-conteneurs/evidence/evidence-01-nginx-local-port-mapping.md) | [Notes](../08-docker-conteneurs/notes/docker-nginx-local.md) | Done |
+| 09 | Docker port mapping failures and troubleshooting | A créer | A créer | A créer | A créer | Planned |

@@ -94,6 +94,8 @@ Le module réseau est en cours avec les premiers labs TCP/IP publiés.
 | 05 | DHCP / passerelle / adressage | [Journal](30-jours-cloud-operations-belgique/journal/jour-05-dhcp-passerelle-adressage.md) | [Lab](01-reseaux-tcp-ip/labs/lab-04-dhcp-passerelle-adressage.md) | [Evidence](01-reseaux-tcp-ip/evidence/evidence-04-dhcp-passerelle-adressage.md) | [Notes](01-reseaux-tcp-ip/notes/dhcp-passerelle-adressage.md) | Publié |
 | 06 | Ports / firewall / connectivité | [Journal](30-jours-cloud-operations-belgique/journal/jour-06-ports-firewall-connectivite.md) | [Lab](01-reseaux-tcp-ip/labs/lab-05-ports-firewall-connectivite.md) | [Evidence](01-reseaux-tcp-ip/evidence/evidence-05-ports-firewall-connectivite.md) | [Notes](01-reseaux-tcp-ip/notes/ports-firewall-connectivite.md) | Done |
 | 07 | Revue réseau et mini case study de troubleshooting | A créer | A créer | A créer | A créer | Planned |
+| 08 | Docker Nginx local | [Journal](30-jours-cloud-operations-belgique/journal/jour-08-docker-nginx-local.md) | [Lab](08-docker-conteneurs/labs/lab-01-nginx-local-port-mapping.md) | [Evidence](08-docker-conteneurs/evidence/evidence-01-nginx-local-port-mapping.md) | [Notes](08-docker-conteneurs/notes/docker-nginx-local.md) | Done |
+| 09 | Docker port mapping failures and troubleshooting | A créer | A créer | A créer | A créer | Planned |
 
 ## What This Repository Demonstrates
 

@@ -59,10 +59,12 @@ Avant toute publication, vérifier `SECURITY-CHECKLIST.md`. Ne jamais publier de
 | 05 | DHCP, passerelle, adressage | [jour-05-dhcp-passerelle-adressage.md](journal/jour-05-dhcp-passerelle-adressage.md) | Publié |
 | 06 | Ports, firewall, connectivité | [jour-06-ports-firewall-connectivite.md](journal/jour-06-ports-firewall-connectivite.md) | Done |
 | 07 | Revue réseau et mini case study de troubleshooting | A créer | Planned |
+| 08 | Docker Nginx local | [jour-08-docker-nginx-local.md](journal/jour-08-docker-nginx-local.md) | Done |
+| 09 | Docker port mapping failures and troubleshooting | A créer | Planned |
 
 ## Prochaine étape
 
-Jour 07 : revue de la première semaine réseau, synthèse des preuves, questions d'entretien et mini case study réseau.
+Jour 07 reste la revue de la première semaine réseau, avec synthèse des preuves, questions d'entretien et mini case study réseau. Jour 08 est publié; Jour 09 portera sur les échecs de mapping de ports et leur diagnostic.
 
 ## Fréquence LinkedIn recommandée
 

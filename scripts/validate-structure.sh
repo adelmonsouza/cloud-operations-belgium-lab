@@ -34,6 +34,7 @@ required_dirs=(
   "templates"
   "portfolio"
   "15-laboratoire-final-jury"
+  "08-docker-conteneurs"
   "30-jours-cloud-operations-belgique"
   "docs"
 )
@@ -90,6 +91,14 @@ final_lab_files=(
   "15-laboratoire-final-jury/08-defense-jury.md"
 )
 
+docker_module_files=(
+  "08-docker-conteneurs/README.md"
+  "08-docker-conteneurs/interview-questions.md"
+  "08-docker-conteneurs/labs"
+  "08-docker-conteneurs/evidence"
+  "08-docker-conteneurs/notes"
+)
+
 challenge_files=(
   "30-jours-cloud-operations-belgique/README.md"
   "30-jours-cloud-operations-belgique/PLAN-30-JOURS.md"
@@ -129,6 +138,10 @@ for file in "${portfolio_files[@]}"; do
 done
 
 for file in "${final_lab_files[@]}"; do
+  require_path "$file"
+done
+
+for file in "${docker_module_files[@]}"; do
   require_path "$file"
 done
 
