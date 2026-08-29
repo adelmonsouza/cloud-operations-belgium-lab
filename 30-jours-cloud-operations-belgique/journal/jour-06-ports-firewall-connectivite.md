@@ -26,6 +26,14 @@ netstat -an | grep LISTEN
 
 Résultat pédagogique retenu : DNS, TCP 443, TCP 80 et HTTP(S) fonctionnent vers `example.com`. Les commandes `lsof` et `netstat` servent à identifier les services ou sockets locaux en écoute, mais leurs sorties brutes restent privées.
 
+## Comment j'ai travaillé
+
+J'ai d'abord testé les commandes dans le sandbox local afin de séparer l'apprentissage technique du dépôt public. Les outputs bruts ont été conservés dans les notes privées, car ils peuvent contenir des informations locales comme des processus, des ports internes ou un nom utilisateur.
+
+Ensuite, j'ai publié uniquement une version public-safe : commandes génériques, interprétation opérationnelle et placeholders. L'objectif n'était pas de scanner Internet, mais de comprendre comment vérifier la connectivité applicative de manière défensive et autorisée.
+
+`example.com` a été utilisé comme cible sûre pour les tests HTTP/HTTPS. Les commandes `lsof` et `netstat` ont été utilisées uniquement pour observer la machine locale, pas pour scanner des systèmes tiers.
+
 ## Ce que j'ai compris
 
 Un diagnostic applicatif ne doit pas s'arrêter à "le site ne marche pas". Il faut vérifier séparément la résolution DNS, la connectivité réseau, le port attendu, la présence d'un service en écoute et la réponse applicative.
@@ -116,6 +124,20 @@ La difficulté principale est d'interpréter correctement le signal : un port ou
 - Chemins locaux personnels.
 - Tout screenshot non anonymisé.
 - Toute information d'employeur, client ou environnement professionnel réel.
+
+## Ce qui peut être publié
+
+- La méthode de diagnostic.
+- La liste des commandes sûres avec `example.com` ou `localhost`.
+- Des résultats simulés avec placeholders.
+- Une matrice symptôme / signal / hypothèse / action.
+- Une explication de type entretien, sans information réelle de machine.
+
+## Ce que ce jour démontre
+
+Ce jour démontre une capacité à suivre une méthode de diagnostic structurée : vérifier DNS, TCP, TLS, HTTP, firewall et service applicatif sans mélanger les couches. Il montre aussi une capacité à documenter un lab technique sans exposer d'information sensible.
+
+Pour un profil Cloud Operations, cette preuve indique que je peux transformer une observation brute en hypothèse exploitable : port accessible, port refusé, timeout, service local en écoute ou service arrêté.
 
 ## Résultat du jour
 

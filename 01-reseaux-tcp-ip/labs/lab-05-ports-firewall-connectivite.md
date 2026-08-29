@@ -22,13 +22,65 @@ Une application web de `<FAKE_COMPANY_EXAMPLE>` n'est pas accessible depuis un p
 
 ## Commandes sûres
 
+Exécuter ces commandes une par une. Après chaque commande, noter le signal observé dans les notes privées, puis préparer uniquement une version anonymisée pour le dépôt public.
+
 ```bash
+curl -I https://example.com
 nc -vz example.com 443
 nc -vz example.com 80
-curl -I https://example.com
 lsof -iTCP -sTCP:LISTEN -n -P
 netstat -an | grep LISTEN
 ```
+
+### `curl -I https://example.com`
+
+```bash
+curl -I https://example.com
+```
+
+Cette commande demande uniquement les en-têtes HTTP. Elle vérifie plusieurs couches en une seule observation : résolution DNS, connexion TCP vers 443, négociation HTTPS et réponse HTTP.
+
+Signal à observer : un statut HTTP public-safe comme `<HTTP_STATUS_EXAMPLE>`. Une réponse HTTP indique que le chemin applicatif répond, mais elle ne prouve pas que toutes les fonctionnalités de l'application sont opérationnelles.
+
+### `nc -vz example.com 443`
+
+```bash
+nc -vz example.com 443
+```
+
+Cette commande teste la connectivité TCP vers le port HTTPS. Elle est utile pour distinguer un problème de port d'un problème purement applicatif.
+
+Signal à observer : `<CONNECTIVITY_RESULT_EXAMPLE>`, par exemple port accessible, connexion refusée ou timeout. Un port accessible signifie que la connexion TCP arrive au service, pas que l'application est saine.
+
+### `nc -vz example.com 80`
+
+```bash
+nc -vz example.com 80
+```
+
+Cette commande teste la connectivité TCP vers le port HTTP. Elle permet de comparer le comportement de HTTP et HTTPS dans un diagnostic simple.
+
+Signal à observer : différence éventuelle entre port 80 et port 443. Si 80 répond et 443 échoue, l'hypothèse peut se déplacer vers TLS, listener HTTPS, règle firewall spécifique ou configuration applicative.
+
+### `lsof -iTCP -sTCP:LISTEN -n -P`
+
+```bash
+lsof -iTCP -sTCP:LISTEN -n -P
+```
+
+Cette commande observe les services TCP en écoute sur la machine locale. Elle aide à vérifier si un service attendu est réellement démarré et lié à un port.
+
+Signal à observer : présence ou absence d'un listener sur `<PORT_EXAMPLE>`. La sortie brute doit rester privée, car elle peut contenir nom utilisateur, processus, ports internes et informations système.
+
+### `netstat -an | grep LISTEN`
+
+```bash
+netstat -an | grep LISTEN
+```
+
+Cette commande fournit une autre vue des sockets en écoute. Elle sert à confirmer l'observation locale quand `lsof` n'est pas disponible ou quand l'on veut comparer deux vues.
+
+Signal à observer : socket en état `LISTEN` sur un port attendu. Comme pour `lsof`, la sortie brute doit rester hors du dépôt public et être remplacée par des placeholders.
 
 ## Explication des commandes
 
@@ -84,6 +136,16 @@ Ne jamais publier :
 
 L'utilisateur indique que `<SERVICE_NAME_EXAMPLE>` ne répond pas. DNS retourne `<DNS_RESULT_EXAMPLE>`. Le test `nc` vers `<PORT_EXAMPLE>` retourne `<CONNECTIVITY_RESULT_EXAMPLE>`, tandis que `curl -I` retourne `<HTTP_STATUS_EXAMPLE>`. L'équipe Cloud Operations documente ces signaux pour distinguer un problème de port, firewall ou application.
 
+## Lecture des résultats
+
+| Signal | Interprétation prudente | Limite |
+|---|---|---|
+| DNS OK + port 443 accessible | Le nom résout et le port HTTPS accepte une connexion TCP. | Ne prouve pas que l'application fonctionne complètement. |
+| DNS OK + port fermé | La destination est probablement atteinte, mais le service n'accepte pas la connexion. | Peut dépendre d'une règle locale ou distante. |
+| DNS OK + timeout | Le trafic peut être filtré, perdu ou dirigé vers un endpoint indisponible. | Ne suffit pas à accuser le firewall sans autre preuve. |
+| Port local en écoute | Un service local écoute sur un port. | Ne prouve pas que le service est accessible depuis un autre réseau. |
+| Service arrêté | Aucun listener attendu n'est visible. | Vérifier aussi configuration, logs et dépendances. |
+
 ## Exemples fictifs
 
 | Exemple | DNS | Port | Signal applicatif | Interprétation |
@@ -113,6 +175,10 @@ Comment vérifiez-vous si un problème d'accès web vient du réseau, du firewal
 ## Question d'entretien en anglais
 
 How would you troubleshoot an application that resolves in DNS but does not respond on the expected port?
+
+## Comment expliquer ce lab en entretien
+
+Réponse courte possible : "Je sépare le diagnostic en couches. Je vérifie d'abord que le nom répond, puis je teste le port attendu avec une destination autorisée. Ensuite, je compare timeout et connection refused, et je vérifie si un service écoute localement quand c'est pertinent. Je documente seulement des résultats anonymisés pour éviter toute fuite."
 
 ## Preuve attendue
 

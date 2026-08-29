@@ -62,6 +62,26 @@ lsof -iTCP -sTCP:LISTEN -n -P
 netstat -an | grep LISTEN
 ```
 
+## Comment faire le lab
+
+1. Commencer par `curl -I https://example.com` pour obtenir un signal applicatif simple.
+2. Tester ensuite les ports 443 et 80 avec `nc` pour isoler la connectivité TCP.
+3. Observer les listeners locaux avec `lsof` ou `netstat` uniquement sur sa machine.
+4. Noter les outputs bruts dans un espace privé.
+5. Publier seulement une synthèse avec placeholders.
+
+Le but n'est pas d'accumuler des commandes. Le but est d'apprendre à relier une commande à une hypothèse opérationnelle.
+
+## Pourquoi chaque commande est utilisée
+
+| Commande | Pourquoi elle est utile | Ce qu'elle ne prouve pas |
+|---|---|---|
+| `curl -I https://example.com` | Vérifie une réponse HTTP(S) sans télécharger le contenu complet. | Ne valide pas toutes les fonctions de l'application. |
+| `nc -vz example.com 443` | Teste si le port HTTPS accepte une connexion TCP. | Ne valide pas la santé applicative. |
+| `nc -vz example.com 80` | Compare le comportement du port HTTP avec HTTPS. | Ne prouve pas que HTTP doit être exposé en production. |
+| `lsof -iTCP -sTCP:LISTEN -n -P` | Montre les processus locaux qui écoutent sur des ports TCP. | Ne doit pas être publié brut. |
+| `netstat -an | grep LISTEN` | Confirme les sockets en écoute d'une autre manière. | Ne donne pas toujours le processus associé. |
+
 ## Règles de sécurité
 
 - Ne pas scanner des IPs ou domaines inconnus.
@@ -100,6 +120,18 @@ Documenter port, protocole, résultat, contexte de test et hypothèse permet une
 ## Limites
 
 Ces commandes doivent rester limitées à des destinations autorisées. Elles ne remplacent pas les logs firewall, métriques applicatives, tests depuis plusieurs réseaux ou outils de supervision.
+
+## Interprétation en entretien
+
+Une bonne réponse d'entretien ne récite pas seulement les commandes. Elle explique l'ordre de diagnostic :
+
+1. Le nom résout-il correctement ?
+2. Le port attendu répond-il ?
+3. Le signal est-il un timeout, un refus ou une réponse applicative ?
+4. Le service écoute-t-il localement si l'on contrôle la machine ?
+5. Quelle équipe ou quel composant doit être vérifié ensuite ?
+
+Cette approche montre une logique Cloud Operations : réduire le périmètre, documenter les signaux et escalader avec précision.
 
 ## Questions d'entretien en français
 

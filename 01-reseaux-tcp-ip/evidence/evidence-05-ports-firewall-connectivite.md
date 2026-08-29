@@ -20,6 +20,12 @@ Démontrer une méthode de diagnostic permettant de relier port, firewall, servi
 
 La session locale a vérifié la connectivité applicative vers `example.com` avec des commandes sûres et limitées. Le résultat pédagogique retenu est que DNS, TCP 443, TCP 80 et HTTP(S) fonctionnent vers `example.com`, tandis que les commandes locales `lsof` et `netstat` servent à identifier des listeners à anonymiser strictement.
 
+## Méthode de production de la preuve
+
+La preuve publique est construite en deux étapes. D'abord, les commandes sont testées localement dans un sandbox afin de comprendre les signaux réels. Ensuite, les outputs bruts sont remplacés par des placeholders avant d'être documentés dans le dépôt public.
+
+Cette méthode permet de montrer la compétence de diagnostic sans publier de données de machine, de réseau personnel, d'employeur ou de client.
+
 ## Commandes utilisées
 
 ```bash
@@ -67,6 +73,16 @@ Decision: <OPERATIONAL_DECISION_EXAMPLE>
 
 Le diagnostic compare plusieurs signaux : DNS, port TCP, réponse HTTP et listener local. DNS OK avec timeout sur le port attendu oriente vers firewall/routage, tandis que DNS OK avec connection refused oriente plutôt vers service absent ou mauvais endpoint.
 
+## Comment interpréter les résultats
+
+| Observation public-safe | Ce que cela suggère | Action suivante |
+|---|---|---|
+| `TCP 443: <CONNECTIVITY_RESULT_EXAMPLE>` | Le port HTTPS est le point principal à vérifier pour une application web sécurisée. | Comparer avec le statut HTTP et les logs applicatifs disponibles. |
+| `TCP 80: <CONNECTIVITY_RESULT_EXAMPLE>` | Le port HTTP peut aider à comparer deux chemins applicatifs. | Vérifier si une redirection ou une règle spécifique existe. |
+| `HTTP(S): <HTTP_STATUS_EXAMPLE>` | La couche applicative retourne un signal exploitable. | Interpréter le code HTTP dans le contexte du service. |
+| `Local listeners: <PROCESS_NAME_REDACTED>` | Un service local écoute sur un port. | Vérifier bind address, firewall local et configuration. |
+| `Local listeners: none on <PORT_EXAMPLE>` | Le service attendu n'écoute pas localement. | Vérifier démarrage du service, configuration et logs. |
+
 ## Décision opérationnelle
 
 Décision fictive : escalader avec une hypothèse précise au lieu d'indiquer seulement que "l'application ne fonctionne pas". Le ticket d'incident doit contenir le port attendu, le test effectué, le signal observé, l'impact et l'action recommandée.
@@ -97,6 +113,12 @@ Operational decision: <OPERATIONAL_DECISION_EXAMPLE>
 - Règles firewall réelles.
 - Noms de services internes, clients ou employeurs.
 
+## Commentaires de publication
+
+Cette evidence peut être publiée parce qu'elle ne contient pas d'output brut. Elle montre le raisonnement, les commandes et l'interprétation, mais pas les détails réels de l'environnement local.
+
+Avant publication, vérifier que les champs restent sous forme de placeholders et que les exemples ne révèlent ni machine, ni réseau, ni système professionnel réel.
+
 ## Données sensibles vérifiées : oui
 
 - Aucun scan de systèmes tiers.
@@ -122,3 +144,10 @@ Operational decision: <OPERATIONAL_DECISION_EXAMPLE>
 Cette preuve peut soutenir une réponse à la question : "Comment diagnostiquez-vous une application web inaccessible ?"
 
 Réponse possible : vérifier DNS, tester le port attendu avec une destination autorisée, comparer `timeout` et `connection refused`, utiliser `curl -I` pour obtenir un signal applicatif, vérifier les listeners locaux si le service est local, puis escalader avec des observations précises.
+
+Points à mettre en avant :
+
+- méthode par couches : DNS, TCP, TLS, HTTP, service ;
+- discipline public-safe : pas d'outputs bruts ;
+- capacité à transformer un symptôme vague en hypothèse actionnable ;
+- escalade claire vers réseau, sécurité, système ou application.
