@@ -6,7 +6,7 @@ Le dossier `30-jours-cloud-operations-belgique/` fournit une cadence courte pour
 
 ## Suivi actuel
 
-Le module réseau `01-reseaux-tcp-ip/` est en cours; les Jours 01 à 08 sont publiés, dont le Jour 07 avec une mini case study de troubleshooting en couches et le Jour 08 avec un lab Nginx local public-safe dans `08-docker-conteneurs/`. Le Jour 09 est planifié sur les échecs de mapping de ports et le troubleshooting Docker.
+Jours 01 à 08 publiés ; Jour 09 planned. Le Jour 07 est Done avec une mini case study de troubleshooting réseau; le Jour 08 est Done/Publié avec un lab Nginx local public-safe dans `08-docker-conteneurs/`.
 
 | Phase | Objectif | Livrables | Preuves | Compétences | Statut initial | Valeur professionnelle |
 |---|---|---|---|---|---|---|

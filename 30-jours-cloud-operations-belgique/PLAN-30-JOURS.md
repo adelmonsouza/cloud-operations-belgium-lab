@@ -1,6 +1,6 @@
 # Plan - 30 Jours Cloud Operations Belgique
 
-Le tableau ci-dessous représente le plan pédagogique initial. Il conserve le bloc Windows Server comme étape prévue de formation, mais l'ordre réel de publication a évolué pour publier d'abord les preuves réseau et un premier lab Docker local.
+Le tableau ci-dessous représente le plan pédagogique actualisé du défi public. L'ordre réel de publication privilégie d'abord les preuves réseau, puis un premier lab Docker local avant les blocs Windows Server.
 
 | Jour | Thème | Objectif | Livrable | Module associé | Preuve attendue | Question d'entretien |
 |---|---|---|---|---|---|---|
@@ -11,8 +11,8 @@ Le tableau ci-dessous représente le plan pédagogique initial. Il conserve le b
 | 5 | DHCP | Comprendre attribution d'adresses | Schéma simple | `04-administration-windows-server/` | Schéma DHCP fictif | A quoi sert DHCP en entreprise ? |
 | 6 | Ports et firewall | Relier services, ports et filtrage | Checklist | `01-reseaux-tcp-ip/` | Tableau ports/services | Comment vérifier qu'un port est ouvert ? |
 | 7 | Revue semaine 1 | Consolider réseau et orientation | Journal hebdomadaire | `JOURNAL.md` | Synthèse semaine 1 | Quelle preuve réseau pouvez-vous montrer ? |
-| 8 | Windows Server (bloc pédagogique initial) | Identifier rôles serveur | Note structurée | `02-windows-server-introduction/` | Checklist rôles | Quels rôles Windows Server sont courants ? |
-| 9 | Services Windows (bloc pédagogique initial) | Comprendre services et état | Procédure | `02-windows-server-introduction/` | Checklist service | Comment vérifier un service Windows ? |
+| 8 | Docker Nginx local | Comprendre daemon, conteneur et mapping de port | Lab local public-safe | `08-docker-conteneurs/` | Evidence Nginx local anonymisée | Comment vérifiez-vous qu'un service conteneurisé est disponible ? |
+| 9 | Docker port mapping troubleshooting | Diagnostiquer un port publié qui ne répond pas | Lab de troubleshooting planifié | `08-docker-conteneurs/` | Evidence public-safe à créer | Comment diagnostiquer un mapping Docker qui échoue ? |
 | 10 | PowerShell bases | Comprendre cmdlets et pipeline | Script simple | `03-powershell-introduction/` | Script non destructif | Pourquoi PowerShell est utile pour l'administration ? |
 | 11 | PowerShell reporting | Produire un inventaire pédagogique | Mini-script | `03-powershell-introduction/` | Sortie anonymisée | Comment gérez-vous les erreurs dans un script ? |
 | 12 | Active Directory concepts | Comprendre domaine, OU, users, groups | Note conceptuelle | `04-administration-windows-server/` | Schéma AD fictif | Quel est le rôle d'Active Directory ? |
@@ -22,7 +22,7 @@ Le tableau ci-dessous représente le plan pédagogique initial. Il conserve le b
 | 16 | Logs Linux | Lire journaux et diagnostiquer | Mini-lab logs | `07-linux-server-administration/` | Extrait anonymisé | Comment utilisez-vous les logs pendant un incident ? |
 | 17 | Bash bases | Créer script sûr | Script Bash | `08-bash-scripting/` | Script avec `set -euo pipefail` | Pourquoi valider les entrées d'un script ? |
 | 18 | Bash checks | Automatiser un contrôle local | Mini-script | `08-bash-scripting/` | Sortie de test | Comment éviter un script destructif ? |
-| 19 | Docker | Comprendre image, conteneur, logs | Note et commandes | `09-containerisation/` | Commandes Docker pédagogiques | Différence entre image et conteneur ? |
+| 19 | Windows Server - bloc optionnel ultérieur | Identifier rôles serveur, services et état | Note structurée ou procédure | `02-windows-server-introduction/` | Checklist rôles/services | Quels rôles Windows Server sont courants ? |
 | 20 | GitHub Actions | Comprendre validation CI | Note workflow | `.github/workflows/` | Explication du workflow | Pourquoi valider automatiquement un dépôt ? |
 | 21 | Revue semaine 3 | Consolider Linux, Bash, Docker, CI | Journal hebdomadaire | `JOURNAL.md` | Synthèse semaine 3 | Quelle preuve d'automatisation pouvez-vous montrer ? |
 | 22 | Azure fundamentals | Revoir ressources, régions, groupes | Note AZ-104 | `05-az-104-azure-administrator/` | Carte concepts Azure | Comment organisez-vous les ressources Azure ? |
@@ -37,7 +37,7 @@ Le tableau ci-dessous représente le plan pédagogique initial. Il conserve le b
 
 ## Ordre réel publié à ce jour
 
-Cette section suit les contenus effectivement publiés dans le dépôt. Le Jour 07 correspond à la revue réseau, le Jour 08 au lab Docker Nginx local et le Jour 09 reste planifié. Windows Server et Active Directory restent des blocs d'infrastructure prévus ultérieurement; ils ne sont pas présentés comme le contenu publié du Jour 08.
+Cette section suit les contenus effectivement publiés dans le dépôt. Jour 07 : Network troubleshooting case study. Jour 08 : Docker Nginx local lab. Jour 09 : Docker port mapping failures and troubleshooting, planned. Windows Server reste un later optional infrastructure block et n'est pas présenté comme le contenu publié du Jour 08.
 
 | Jour | Sujet publié | Journal | Lab | Evidence | Notes | Statut |
 |---|---|---|---|---|---|---|
