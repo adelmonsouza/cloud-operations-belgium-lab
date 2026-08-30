@@ -15,13 +15,18 @@ Ce document relie le programme officiel de formation aux dossiers du dépôt, au
 | Microsoft 365 Administration | `06-microsoft-365-administration/` | Utilisateurs, groupes, licences, sécurité M365 | Labs conceptuels et checklists | Administration moderne workplace | N/A |
 | Administration de serveurs Linux | `07-linux-server-administration/` | Services, utilisateurs, permissions, systemd | Labs Linux et commandes | Polyvalence systèmes | N/A |
 | Scripting Bash | `08-bash-scripting/` | Shell, conditions, boucles, validation | Scripts non destructifs | Automatisation Linux | N/A |
-| Introduction à la conteneurisation | `09-containerisation/` | Images, conteneurs, volumes, réseaux, Compose | Dockerfiles, Compose, evidence | Exploitation applicative moderne | N/A |
+| Introduction pratique à Docker (module publié) | `08-docker-conteneurs/` | Docker daemon, image Nginx, conteneur, mapping de ports, vérification localhost | Préflight, lab Nginx local, evidence public-safe | Première expérience d'exploitation conteneurisée | N/A |
+| Introduction à la conteneurisation (bloc planifié) | `09-containerisation/` | Images, conteneurs, volumes, réseaux, Compose | Dockerfiles, Compose, evidence | Exploitation applicative moderne | N/A |
 | AWS Cloud Practitioner Foundational | `10-aws-cloud-practitioner/` | Concepts cloud, services AWS, coûts, sécurité | Notes, mini-labs conceptuels | Culture multi-cloud | AWS Cloud Practitioner |
 | Terraform | `11-terraform/` | IaC, state, modules, variables, plan/apply | Configurations safe, plans anonymisés | Automatisation infrastructure | N/A |
 | VMware vSphere | `12-vmware-vsphere/` | Concepts VM, clusters, stockage, réseau | Labs théoriques, schémas | Compréhension hybride/on-prem | N/A |
 | Observation et supervision | `13-observabilite-supervision/` | Logs, métriques, alertes, dashboards, runbooks | KQL, dashboards, incidents fictifs | Fiabilité et exploitation | N/A |
 | Sécurisation systèmes et services | `14-securisation-systemes-services/` | Hardening, IAM, patching, vuln management | Checklists, runbooks, evidence | Secure by default | N/A |
 | Laboratoire final avec jury | `15-laboratoire-final-jury/` | Architecture intégrée, défense orale, synthèse | Dossier final, preuves, présentation | Démonstration complète | N/A |
+
+### Note sur les références Docker
+
+Le module Docker publié actuellement se trouve dans `08-docker-conteneurs/` et commence par un préflight du daemon, un conteneur Nginx local, un mapping de port, une vérification sur `localhost` et une evidence public-safe. Les références plus anciennes à `09-containerisation/` sont conservées comme libellés historiques ou de planification pour le bloc plus large Docker/Compose.
 
 ## Comment utiliser ce programme
 

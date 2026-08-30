@@ -1,5 +1,7 @@
 # Plan - 30 Jours Cloud Operations Belgique
 
+Le tableau ci-dessous représente le plan pédagogique initial. Il conserve le bloc Windows Server comme étape prévue de formation, mais l'ordre réel de publication a évolué pour publier d'abord les preuves réseau et un premier lab Docker local.
+
 | Jour | Thème | Objectif | Livrable | Module associé | Preuve attendue | Question d'entretien |
 |---|---|---|---|---|---|---|
 | 1 | Orientation Cloud Operations | Clarifier le positionnement professionnel | Journal jour 1 | `00-orientation/` | Objectif et trajectoire écrits | Pourquoi voulez-vous évoluer vers Cloud Operations ? |
@@ -9,8 +11,8 @@
 | 5 | DHCP | Comprendre attribution d'adresses | Schéma simple | `04-administration-windows-server/` | Schéma DHCP fictif | A quoi sert DHCP en entreprise ? |
 | 6 | Ports et firewall | Relier services, ports et filtrage | Checklist | `01-reseaux-tcp-ip/` | Tableau ports/services | Comment vérifier qu'un port est ouvert ? |
 | 7 | Revue semaine 1 | Consolider réseau et orientation | Journal hebdomadaire | `JOURNAL.md` | Synthèse semaine 1 | Quelle preuve réseau pouvez-vous montrer ? |
-| 8 | Windows Server | Identifier rôles serveur | Note structurée | `02-windows-server-introduction/` | Checklist rôles | Quels rôles Windows Server sont courants ? |
-| 9 | Services Windows | Comprendre services et état | Procédure | `02-windows-server-introduction/` | Checklist service | Comment vérifier un service Windows ? |
+| 8 | Windows Server (bloc pédagogique initial) | Identifier rôles serveur | Note structurée | `02-windows-server-introduction/` | Checklist rôles | Quels rôles Windows Server sont courants ? |
+| 9 | Services Windows (bloc pédagogique initial) | Comprendre services et état | Procédure | `02-windows-server-introduction/` | Checklist service | Comment vérifier un service Windows ? |
 | 10 | PowerShell bases | Comprendre cmdlets et pipeline | Script simple | `03-powershell-introduction/` | Script non destructif | Pourquoi PowerShell est utile pour l'administration ? |
 | 11 | PowerShell reporting | Produire un inventaire pédagogique | Mini-script | `03-powershell-introduction/` | Sortie anonymisée | Comment gérez-vous les erreurs dans un script ? |
 | 12 | Active Directory concepts | Comprendre domaine, OU, users, groups | Note conceptuelle | `04-administration-windows-server/` | Schéma AD fictif | Quel est le rôle d'Active Directory ? |
@@ -33,9 +35,9 @@
 | 29 | Security hardening et runbooks | Formaliser sécurité opérationnelle | Checklist et runbook | `14-securisation-systemes-services/` | Checklist public-safe | Qu'est-ce que le moindre privilège ? |
 | 30 | Final review et portfolio | Relier preuves, final lab et employabilité | Synthèse portfolio | `15-laboratoire-final-jury/`, `portfolio/` | Liste de preuves prioritaires | Quelle progression ce dépôt démontre-t-il ? |
 
-## Suivi de publication du défi
+## Ordre réel publié à ce jour
 
-Cette section suit les contenus effectivement publiés dans le dépôt. Elle complète le parcours pédagogique général ci-dessus sans remplacer les thèmes de formation prévus.
+Cette section suit les contenus effectivement publiés dans le dépôt. Le Jour 07 correspond à la revue réseau, le Jour 08 au lab Docker Nginx local et le Jour 09 reste planifié. Windows Server et Active Directory restent des blocs d'infrastructure prévus ultérieurement; ils ne sont pas présentés comme le contenu publié du Jour 08.
 
 | Jour | Sujet publié | Journal | Lab | Evidence | Notes | Statut |
 |---|---|---|---|---|---|---|
